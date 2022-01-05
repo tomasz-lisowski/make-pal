@@ -53,9 +53,13 @@ endef
 endif
 
 ifeq ($(OS),Windows_NT)
-	BIN_EXT:=exe
+	EXT_BIN:=exe
+	EXT_LIB_STATIC:=lib
+	EXT_LIB_SHARED:=dll
 else
-	BIN_EXT:=elf
+	EXT_BIN:=elf
+	EXT_LIB_STATIC:=a
+	EXT_LIB_SHARED:=so
 endif
 
 ifeq ($(OS),Windows_NT)
