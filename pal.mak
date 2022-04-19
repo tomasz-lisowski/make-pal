@@ -59,10 +59,12 @@ endef
 endif
 
 ifeq ($(OS),Windows_NT)
+	LIB_PREFIX:=
 	EXT_BIN:=exe
 	EXT_LIB_STATIC:=lib
 	EXT_LIB_SHARED:=dll
 else
+	LIB_PREFIX:=lib
 	EXT_BIN:=elf
 	EXT_LIB_STATIC:=a
 	EXT_LIB_SHARED:=so
