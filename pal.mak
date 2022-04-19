@@ -19,6 +19,9 @@ endef
 define pal_rmdir
 	if exist "$(subst /,\,$(1))" rmdir /Q /S "$(subst /,\,$(1))"
 endef
+define pal_rm
+	if exist "$(subst /,\,$(1))" del "$(subst /,\,$(1))"
+endef
 define pal_cp
 	if exist "$(subst /,\,$(1))" copy /y "$(subst /,\,$(1))" "$(subst /,\,$(2))"
 endef
@@ -37,6 +40,9 @@ define pal_mkdir
 endef
 define pal_rmdir
 	rm -rf $(1)
+endef
+define pal_rm
+	rm -f $(1)
 endef
 define pal_cp
 	cp $(1) $(2)
